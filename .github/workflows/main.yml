@@ -3,7 +3,7 @@ on: workflow_dispatch
 jobs: 
   firstjob:
     runs-on: mac0s-latest
-      steps:
+    steps:
       - name: Print greeting
         run: echo "Hello World!"
       - name: Print goodbye
