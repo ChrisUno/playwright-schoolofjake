@@ -6,7 +6,7 @@ jobs:
     steps:
       - name: Print greeting
         run: echo "Hello World!"
-      -name: Print goodbye
-        run: echo goodbye
+      - name: Print goodbye
+        run: echo "goodbye"
         
     
