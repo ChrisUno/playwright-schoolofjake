@@ -5,12 +5,12 @@
   "scripts": {
     "test": "playwright-jake --headed",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "type": "module"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "devDependencies": {
     "@playwright/test": "^1.50.1",
     "@types/node": "^22.13.1",
@@ -20,5 +20,17 @@
   },
   "dependencies": {
     "playwright": "^1.50.1"
-  }
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChrisUno/playwright-schoolofjake.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ChrisUno/playwright-schoolofjake/issues"
+  },
+  "homepage": "https://github.com/ChrisUno/playwright-schoolofjake#readme",
+  "description": ""
 }
