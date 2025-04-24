@@ -4,10 +4,28 @@ jobs:
   firstjob:
     runs-on: ubuntu-latest
     steps:
-      - name: Print greeting
-        run: echo "Hello World!"
-      - name: Print goodbye
-        run: echo "goodbye"
-      - run: |
-          echo "one"
-          echo "two"
+name: CI
+  pull_request:
+    branches:
+      - main
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install
+      - name: Run linting
+        run: npm run lint
+      - name: Run tests
+        run: npm run test
+      - name: Run build
+        run: npm run build
+      - name: Deploy Code
+        run: echo "Deploying code..."
