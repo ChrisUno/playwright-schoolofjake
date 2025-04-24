@@ -4,10 +4,13 @@ jobs:
   firstjob:
     runs-on: ubuntu-latest
     steps:
-      - name: Print greeting
-        run: echo "Hello World!"
-      - name: Print goodbye
-        run: echo "goodbye"
-      - run: |
-          echo "one"
-          echo "two"
+      - name: Install dependencies
+        run: npm install
+      - name: Run linting
+        run: npm run lint
+      - name: Run tests
+        run: npm run test
+      - name: Run build
+        run: npm run build
+      - name: Deploy Code
+        run: echo "Deploying code..."
