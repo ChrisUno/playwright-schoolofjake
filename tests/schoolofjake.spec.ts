@@ -7,6 +7,7 @@ test ('the first test', async ({ page }) => {
     await page.goto('https://www.letskodeit.com/practice');
 
     await expect(page).toHaveTitle('Practice Page');
+    console.log('adding text for pull request example');
 
 });
 
