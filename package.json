@@ -2,11 +2,11 @@
   "name": "playwright-schoolofjake",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "playwright-jake --headed",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "type": "module"
   },
   "keywords": [],
   "author": "",
