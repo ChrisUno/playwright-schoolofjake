@@ -4,7 +4,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "playwright-jake --headed",
+    "test": "playwright-schoolofjake --headed",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
