@@ -4,7 +4,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "playwright-schoolofjake tests",
+    "test": "npx playwright test",
     "test:debug": "playwright test --headed --debug",
     "test:all": "playwright test --headed --debug --trace on-first-retry",
     "test:all:debug": "playwright test --headed --debug --trace on-first-retry",
