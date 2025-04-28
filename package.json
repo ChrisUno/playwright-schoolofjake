@@ -6,7 +6,7 @@
   "scripts": {
     "test": "playwright-jake --headed",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint:fix": "eslint . --fix"
   },
   "keywords": [],
   "author": "",
