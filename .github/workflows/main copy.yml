@@ -9,6 +9,8 @@ on:
       - main
     paths:
       - '.github/workflows/main copy.yml'
+    paths-ignore:
+      - '.github/workflows/main.yml'
 jobs: 
   firstjob:
     runs-on: ubuntu-latest
