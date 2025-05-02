@@ -9,8 +9,9 @@ on:
       - main
     paths:
       - '.github/workflows/main copy.yml'
-    paths-ignore:
-      - '.github/workflows/main.yml'
+    # paths-ignore:
+    #   - '.github/workflows/main.yml'
+    # you may only define one of `paths` and `paths-ignore` for a single event
 jobs: 
   firstjob:
     runs-on: ubuntu-latest
