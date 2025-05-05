@@ -6,6 +6,7 @@ on:
   push:
     # branches:
     #   - main
+    #trying again but without skip ci as a base test
     # paths:
     #   - '.github/workflows/main copy.yml'
     # paths-ignore:
