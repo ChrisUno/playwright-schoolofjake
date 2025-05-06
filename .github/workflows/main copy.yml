@@ -32,6 +32,8 @@ jobs:
 
       - name: Output event data
         run: echo "${{ toJson(github.event) }}"
+        # This will output the entire event data to the console
+        # You can also use `echo "${{ github.event_name }}"` to get the event name
 
       # - name: Run linting
       #   run: npm run lint
