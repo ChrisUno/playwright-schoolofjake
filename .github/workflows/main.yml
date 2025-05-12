@@ -1,6 +1,13 @@
 name: First Workflow
 on: workflow_dispatch
 jobs: 
+# env:
+#   username: ${{ secrets.GITHUB_USERNAME }}
+#   password: ${{ secrets.GITHUB_TOKEN }}
+#   repo: ${{ github.repository }}
+#   branch: ${{ github.ref_name }}
+#   commit: ${{ github.sha }}
+# env allows you to set environment variables for all jobs in the workflow
   firstjob:
     runs-on: ubuntu-latest
     steps:
@@ -17,6 +24,7 @@ jobs:
 
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
+        
 
       - name: Run tests
         run: npm run test
