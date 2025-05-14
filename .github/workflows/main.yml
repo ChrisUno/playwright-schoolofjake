@@ -7,8 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     env: 
       MONGODB_CLUSTER_ADDRESS: testingcluster.73s2ucw.mongodb.net/
-      MONGODB_USERNAME: chriscrawford86
-      MONGODB_PASSWORD: 6dniq6TePTkquFg2
+      MONGODB_USERNAME: ${{  secrets.MONGODB_USERNAME }}
+      MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
 # env:
 #   username: ${{ secrets.GITHUB_USERNAME }}
 #   password: ${{ secrets.GITHUB_TOKEN }}
