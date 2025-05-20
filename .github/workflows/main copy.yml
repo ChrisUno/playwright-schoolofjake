@@ -36,6 +36,7 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
 
+
       - name: Output event data
         run: echo "${{ toJson(github.event) }}"
         # This will output the entire event data to the console
@@ -45,7 +46,15 @@ jobs:
       #   run: npm run lint
 
       - name: Run tests
+        id: 'run-tests'
         run: npm run test
+
+      - name: Run tests report
+        if: ${{ steps.run-tests.outcome == 'success' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: ./test-results
 
       - name: Deploy Code
         run: echo "Deploying code..."
