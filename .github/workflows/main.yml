@@ -3,6 +3,22 @@ on: workflow_dispatch
 env: 
   MONGODB_NAME: testingdb
 jobs:
+  build:
+    continues-on-error: true
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        node: [16, 18]
+        include:
+          - os: ubuntu-latest
+            node: 16
+          - os: windows-latest
+            node: 18
+          exclude:
+            - os: macos-latest
+              node: 16
+    runs-on: ${{ matrix.os }}
   test: 
     runs-on: ubuntu-latest
     env: 
