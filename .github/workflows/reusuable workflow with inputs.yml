@@ -1,0 +1,33 @@
+name: reusable workflow with inputs
+on:
+  workflow_call:
+    inputs:
+        artifact-name:
+          required: true
+          type: string
+          default: 'test-results'
+          description: 'Name of the artifact to upload'
+        artifact-path:
+          required: true
+          type: string
+          default: './test-results'
+          description: 'Path to the artifact to upload'
+          secrets:
+            some-secret:
+              required: true
+              type: string
+              description: 'A secret value'
+      node-version:
+        required: true
+        type: string
+        default: '16'
+      os:
+        required: true
+        type: string
+        default: 'ubuntu-latest'
+      env:
+        required: false
+        type: object
+        default: {}
+
+jobs:
