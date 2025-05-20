@@ -12,22 +12,37 @@ on:
           type: string
           default: './test-results'
           description: 'Path to the artifact to upload'
-          secrets:
-            some-secret:
-              required: true
-              type: string
-              description: 'A secret value'
-      node-version:
-        required: true
-        type: string
-        default: '16'
-      os:
-        required: true
-        type: string
-        default: 'ubuntu-latest'
-      env:
-        required: false
-        type: object
-        default: {}
+        # secrets:
+        #   some-secret:
+        #     required: true
+        #     description: 'A secret value'
+        node-version:
+          required: true
+          type: string
+          default: '16'
+        os:
+          required: true
+          type: string
+          default: 'ubuntu-latest'
+        env:
+        #   required: false
+        #   type: object
+        #   default: {}
 
 jobs:
+  example-job:
+    runs-on: ${{ inputs.os }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ inputs.node-version }}
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ inputs['artifact-name'] }}
+          path: ${{ inputs['artifact-path'] }}

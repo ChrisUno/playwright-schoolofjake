@@ -4,7 +4,7 @@ env:
   MONGODB_NAME: testingdb
 jobs:
   build:
-    continues-on-error: true
+    continue-on-error: true
     strategy:
       fail-fast: false
       matrix:
@@ -15,7 +15,7 @@ jobs:
             node: 16
           - os: windows-latest
             node: 18
-          exclude:
+        exclude:
             - os: macos-latest
               node: 16
     runs-on: ${{ matrix.os }}
