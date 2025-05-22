@@ -1,5 +1,30 @@
 name: 'Get & Cache Dependencies'
 description: 'get the dependencies and cache them'
+inputs: 
+    caching:
+        description: 'Caching dependencies'
+        required: false
+        default: 'true'
+outputs:
+    used-cache:
+        description: 'Cache used'
+        value: ${{ steps.cache-deps.outputs.cache-hit }}
+        # This will output the cache hit status
+        # You can use this output in other jobs or steps
+        # to determine if the cache was used or not
+        # For example, you can use it in a conditional step
+        # to run a different command if the cache was not used
+        # or to upload the cache to a different location
+        # or to a different branch
+        # or to a different repository
+        # or to a different workflow
+        # or to a different job
+        # or to a different step
+        # or to a different action
+        # or to a different event
+        # or to a different input
+        # or to a different output
+        # or to a different environment variable
 runs:
   using: 'composite'
   steps:
