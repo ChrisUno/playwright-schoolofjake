@@ -19,8 +19,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Load and cache dependencies
-        uses: ./.github/workflows/actions/cached-deps
+      # - name: Load and cache dependencies
+      #   uses: ./.github/workflows/actions/cached-deps
         # This will load the reusable workflow from the specified path
         # and cache the dependencies
         # You can also pass inputs to the reusable workflow
